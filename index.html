@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulseras Exclusivas - Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h2><i class="fas fa-gem"></i> Pulseras Exclusivas</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="cart-icon desktop-cart" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Modal -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-modal">
+            <div class="mobile-menu-header">
+                <h3><i class="fas fa-gem"></i> Menú</h3>
+                <button class="close-mobile-menu" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-content">
+                <a href="#inicio" onclick="toggleMobileMenu()" class="mobile-menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#productos" onclick="toggleMobileMenu()" class="mobile-menu-item">
+                    <i class="fas fa-gem"></i>
+                    <span>Productos</span>
+                </a>
+                <a href="#contacto" onclick="toggleMobileMenu()" class="mobile-menu-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Contacto</span>
+                </a>
+                <div class="mobile-menu-divider"></div>
+                <a href="https://wa.me/573176150649" target="_blank" class="mobile-menu-item whatsapp-link" onclick="toggleMobileMenu()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Pulseras Únicas y Elegantes</h1>
+                <p>Descubre nuestra colección exclusiva de pulseras de alta calidad. Diseños únicos que realzan tu estilo personal.</p>
+                <a href="#productos" class="btn-primary">Ver Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos" class="products">
+        <div class="container">
+            <h2 class="section-title">Nuestra Colección</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i>
+                    <span>Todas</span>
+                </button>
+                <button class="filter-btn" data-filter="pareja">
+                    <i class="fas fa-heart"></i>
+                    <span>Parejas</span>
+                </button>
+                <button class="filter-btn" data-filter="acero">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Acero Inoxidable</span>
+                </button>
+                <button class="filter-btn" data-filter="regional">
+                    <i class="fas fa-star"></i>
+                    <span>Ediciones Especiales</span>
+                </button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <button class="close-cart" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0</span> COP</strong>
+                </div>
+                <button class="btn-checkout" onclick="checkout()">
+                    <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+57 317 6150649</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes a Domingo: 9:00 AM - 8:00 PM</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Envíos</h3>
+                    <p>Envíos a toda Colombia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pulseras Exclusivas</h3>
+                    <p>Calidad y estilo en cada diseño</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pulseras Exclusivas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Cart Bottom -->
+    <div class="mobile-cart-bottom" id="mobileCartBottom">
+        <div class="mobile-cart-summary" onclick="toggleMobileCart()">
+            <div class="mobile-cart-info">
+                <span class="mobile-cart-count">0</span>
+                <span class="mobile-cart-text">productos</span>
+            </div>
+            <div class="mobile-cart-total">
+                $<span id="mobileCartTotal">0</span> COP
+            </div>
+            <div class="mobile-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Cart Overlay -->
+    <div class="mobile-cart-overlay" id="mobileCartOverlay">
+        <div class="mobile-cart-modal">
+            <div class="mobile-cart-header">
+                <h3>Carrito de Compras</h3>
+                <button class="close-mobile-cart" onclick="toggleMobileCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-cart-items" id="mobileCartItems">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="mobile-cart-footer">
+                <div class="mobile-cart-total-display">
+                    <strong>Total: $<span id="mobileCartTotalFooter">0</span> COP</strong>
+                </div>
+                <button class="btn-mobile-checkout" onclick="checkout()">
+                    <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
